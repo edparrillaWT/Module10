@@ -94,6 +94,11 @@
     text-transform: uppercase;
   }
   
+  .toggle-menu {
+    display: none;
+    
+  }
+  
   /* .hero button {
     background-color: #fff;
     border: none;
@@ -105,12 +110,7 @@
   } */
 
   /* ############ 3. Navigation ############ */
-/* .logo {
-    max-width: 90px;
-   } */
 
-
-/* == Navigation Bar === */
 .navigation {
     align-content: center;
     width: 100%;
@@ -134,7 +134,7 @@ input#navToggle ~ label {
     height: 2rem;
   }
 
-  input#navToggle ~ label > span,
+  /* input#navToggle ~ label > span,
   input#navToggle ~ label > span::before,
   input#navToggle ~ label > span::after {
     content: "";
@@ -147,7 +147,7 @@ input#navToggle ~ label {
     background: #fff;
     transition: 0.14s ease-in-out;
   }
-  
+   */
 .navigation a {
     text-decoration: none;
     font-size: 16px;
@@ -199,7 +199,7 @@ input#navToggle ~ label {
   
   .trips article {
     margin: 2rem auto;
-    width: 80%;
+    width: 100%;
     max-width: 1000px;
     align-content: center;
   }
@@ -301,69 +301,386 @@ input#navToggle ~ label {
 }
 
 
-/* ######### 9. Footer ######### */
+/* ######### 6. Footer ######### */
+
 footer {
-  margin-top: 1rem;
-}
-/* ######### 9a. Footer > Contact ######### */
-.form {
-  background-color: #223055;
-  color: #fff;
-  padding: 1rem 1rem 2rem;
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; /* Space between grid items */
+    padding: 20px; /* Padding around the footer */
+    background-color: #333;
+    color: white;
 }
 
-.form p {
-  font-weight: 300;
-  padding-bottom: 1rem;
+.footer-section {
+  display: flex;
+  padding: 10px;
+  border: 1px solid #555; /* Optional: border around each section */
+  
 }
-/* ######### 9b. Footer > Connect ######### */
-.social, .contactInfo {
-  background-color: #13b1e7;
-  color: #fff;
-  padding: 1rem 1rem 0;
+
+.footer-section li  {
+  width: 30px;
+  }
+
+footer h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ######### 7. Media ######### */
+@media screen and (min-width: 550px) and (max-width: 950px) {
+  /* ### Hero ####  */
+
+  .hero {
+    background: url("../images/header1_sm.jpg") no-repeat center right;
+    background-size: cover;
+    color: #1f0505;
+    font-size: 15px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 10px 2fr 10px;
+    /* grid-template-rows: .5fr 1fr 20px; */
+    grid-gap: 15px;
+   }
+  
+  .hero img {
+    margin: auto;
+    padding-top: .5rem;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  
+  .hero article {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  /* Naviation */
+
+  .navigation {
+    align-content: center;
+    width: 100%;
+    /* padding: 15px 10px; */
+    /* grid-area: navigation; */
+    font-size: 10px;
+    /* background-color: #979c9c; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input#navToggle {
+    display: none;
+}
+
+input#navToggle ~ label {
+    position: relative;
+    padding: 0.25rem;
+    width: 2rem;
+    height: 1.25rem;
+    height: 2rem;
+  }
+
+  input#navToggle ~ label > span,
+  input#navToggle ~ label > span::before,
+  input#navToggle ~ label > span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: .75rem;
+    height: 0.125rem;
+    width: 1.75rem;
+    opacity: 1;
+    background: #fff;
+    transition: 0.14s ease-in-out;
+  }
+  
+.navigation a {
+    text-decoration: none;
+    font-size: 10px;
+    color:rgb(255, 255, 255);
+    padding: 10px 10px 10px 10px;
+    display: block;
+    text-transform: uppercase;
+    width: 100px;
+    justify-content: center;
+}
+
+
+/* ############ 4. Trips ############ */
+.trips {
+  padding: 1rem;
+  margin: auto;
+  max-width: 600px;
+}
+
+
+.tripList {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}
+
+
+
+.tripList h3, .tripList img {
+  grid-row: 1 / 2;
+  grid-column: 1;
+}
+
+/* ############ 5. Gallery ############ */
+.gallery {
+  max-width: 600px;
+  margin: auto;
+}
+
+.gallery h1 {
   text-align: center;
-}
-
-.social h3 {
-  border-bottom: solid 1px #b6e8ff;
-  font-weight: 400;
-  padding-bottom: .25rem;
-}
-
-.socialIcons {
-  font-size: 200%;
-  padding: 1rem 0;
-}
-
-.socialIcons a {
   color: #223055;
   padding: 0 .5rem;
+  margin-bottom: .25rem;
 }
 
-.socialIcons a:hover {
-  color: #ffc107;
+.galleryWrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: .25em;
+  grid-auto-flow: row dense;
 }
 
-.contactInfo {
-  padding-top: 0;
+.galleryWrap img[src$="_w.jpg"] {
+  grid-column-end: span 2;
 }
 
-.contactInfo article {
-  border-top: solid 1px #b6e8ff;
-  padding: 1rem 0;
+.galleryWrap img[src$="_p.jpg"] {
+  grid-row-end: span 2;
 }
 
-.contactInfo h4 {
-  font-weight: 400;
+.galleryWrap img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
 }
 
-.contactInfo li {
-  font-weight: 300;
+
+/* ######### 6. Footer ######### */
+
+footer {
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px; /* Space between grid items */
+    padding: 10px; /* Padding around the footer */
+    background-color: #333;
+    color: white;
+    height: 60px;
+}
+footer h3 {
+  font-size: 10px;
+}
+footer h4 {
+  font-size: 10px;
+}
+
+}
+
+
+/* ######### 7. Media ######### */
+@media screen and (max-width: 549px) {
+  /* ### Hero ####  */
+
+  .hero {
+    background: url("../images/header1_sm.jpg") no-repeat center right;
+    background-size: cover;
+    color: #1f0505;
+    font-size: 10px;
+    text-align: center;
+    display: grid;
+    /* grid-template-columns: 10px 2fr 10px; */
+    grid-template-rows: .5fr 1fr 10px;
+    grid-gap: 15px;
+   }
+  
+  .hero img {
+    margin: auto;
+    padding-top: .5rem;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  
+  .hero article {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  
+  .hero h1 {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  /* Navigation */
+
+  .navigation {
+    align-content: center;
+    width: 100%;
+    /* padding: 15px 10px; */
+    /* grid-area: navigation; */
+    font-size: 10px;
+    /* background-color: #979c9c; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* display: none; */
+}
+input#navToggle {
+    display: none;
+}
+
+/* input#navToggle ~ label {
+    position: relative;
+    padding: 0.25rem;
+    width: 2rem;
+    height: 1.25rem;
+    height: 2rem;
+  } */
+
+  /* input#navToggle ~ label > span,
+  input#navToggle ~ label > span::before,
+  input#navToggle ~ label > span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: .75rem;
+    height: 0.125rem;
+    width: 1.75rem;
+    opacity: 1;
+    background: #fff;
+    transition: 0.14s ease-in-out;
+  } */
+  
+.navigation a {
+    text-decoration: none;
+    /* font-size: 10px; */
+    /* color:rgb(255, 255, 255); */
+    /* padding: 10px 10px 10px 10px; */
+    /* display: block; */
+    /* text-transform: uppercase; */
+    /* width: 100px; */
+    /* justify-content: center; */
+}
+
+.navigation ul {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+.navigation ul li {
+  display: block;
+}
+
+
+.toggle-menu:checked + .hamburger + .navigation ul {
+  display: flex;
+  
+
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  div {
+      
+      width: 30px;
+      height: 2px;
+      background-color: black;
+      margin: 6px;
+  }
+}
+
+/* ############ 4. Trips ############ */
+.trips {
+  padding: 1rem;
+  margin: auto;
+  max-width: 600px;
+}
+
+
+.tripList {
   list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
 }
 
-.copy {
-  font-size: 70%;
-  font-weight: 300;
-  padding-top: 1rem;
+
+
+.tripList h3, .tripList img {
+  grid-row: 1 / 2;
+  grid-column: 1;
+}
+
+/* ############ 5. Gallery ############ */
+.gallery {
+  max-width: 600px;
+  margin: auto;
+}
+
+.gallery h1 {
+  text-align: center;
+  color: #223055;
+  padding: 0 .5rem;
+  margin-bottom: .25rem;
+}
+
+.galleryWrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: .25em;
+  grid-auto-flow: row dense;
+}
+
+.galleryWrap img[src$="_w.jpg"] {
+  grid-column-end: span 2;
+}
+
+.galleryWrap img[src$="_p.jpg"] {
+  grid-row-end: span 2;
+}
+
+.galleryWrap img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+
+
+/* ######### 6. Footer ######### */
+
+footer {
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px; /* Space between grid items */
+    padding: 10px; /* Padding around the footer */
+    background-color: #333;
+    color: white;
+    height: 60px;
+}
+footer h3 {
+  font-size: 10px;
+}
+footer h4 {
+  font-size: 10px;
+}
+
 }
